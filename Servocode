@@ -1,0 +1,38 @@
+from gpiozero import Servo
+from time import sleep
+
+# Define the GPIO pin connected to the servo's control wire
+# Use the BCM (Broadcom SOC channel) numbering scheme
+servo_pin = 17 
+
+# Create a Servo object
+# The min_pulse_width and max_pulse_width might need adjustment for your specific servo
+my_servo = Servo(servo_pin, min_pulse_width=0.5/1000, max_pulse_width=2.5/1000)
+
+try:
+    while True:
+        # Move to the minimum position (e.g., 0 degrees)
+        print("Moving to min position")
+        my_servo.min()
+        sleep(1)
+
+        # Move to the middle position (e.g., 90 degrees)
+        print("Moving to mid position")
+        my_servo.mid()
+        sleep(1)
+
+        # Move to the maximum position (e.g., 180 degrees)
+        print("Moving to max position")
+        my_servo.max()
+        sleep(1)
+
+        # Set a specific angle (e.g., 45 degrees)
+        print("Moving to 45 degrees")
+        my_servo.value = 0.5  # Value ranges from -1 (min) to 1 (max)
+        sleep(1)
+
+except KeyboardInterrupt:
+    print("Program stopped by user")
+finally:
+    # Clean up the GPIO pins
+    my_servo.close()
