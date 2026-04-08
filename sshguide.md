@@ -7,9 +7,9 @@
 
 
 ## Connecting via PuTTY
-  Hostname(IP Address) field: 192.168.1.6
-  Port: 22
-  Click 'Open'
+ - Hostname(IP Address) field: 192.168.1.6
+ - Port: 22
+  - Click 'Open'
 
 ## Connecting via Terminal (MacOS/Linux/Windows CMD/Powershell)
 
